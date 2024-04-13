@@ -114,7 +114,7 @@ TSDFVolumeCPU::TSDFVolumeCPU(Point3i _res, float _voxelSize, cv::Affine3f _pose,
                              float _raycastStepFactor, bool zFirstMemOrder) :
     TSDFVolume(_res, _voxelSize, _pose, _truncDist, _maxWeight, _raycastStepFactor, zFirstMemOrder)
 {
-    volume = Mat(1, volResolution.x * volResolution.y * volResolution.z, rawType<Voxel>());
+    volume = Mat(1, volResolution.x * volResolution.y * volResolution.z/8, rawType<Voxel>());
 
     reset();
 }
